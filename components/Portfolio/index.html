@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/style.css">
+    <!-- DarkMode/spinner style -->
+    <link rel="stylesheet" href="src/DarkMode.css">
+    <link rel="stylesheet" href="src/media.css">
+    
+    <link rel="shortcut icon" href="img/f-inside-a-circle.png" type="image/x-icon">
+    <title>My-Portfolio</title>
+    <script>
+      function DarkMode(){
+            var body = document.querySelector("body");
+            var section =document.querySelector("section");
+            var theme = document.getElementById("theme");
+           
+            if(theme.checked){
+                body.className = "dark-mode ";
+                
+                
+            } else{
+                body.className = "light-mode";
+               
+            }
+        }
+       
+  </script>
+       
+</head>
+<body class="container-fluid light-mode " onload="bodyload()">
+  <!-- Loader -->
+  <div id="loader"></div>
+
+  <!-- Bg-Video -->
+  <!-- <video autoplay muted loop id="myVideo">
+  <source src="img/Rain.mp4" type="video/mp4">
+  </video> -->
+  
+  <!-- Clock -->
+  
+  <!-- NavBar -->
+
+  <nav class="nav-bar" id="NavBar">
+        <div class="topclock ">
+        <span id="time" class="text-danger"></span>
+        <span id="date" class="text-white"></span> 
+        </div>
+        <div class="brand-logo">
+          <img src="img/F-Name-unscreen.gif" width="100" height="80" alt="brand-logo" class="mb-2">
+          </div>
+            <ul class="nav-list text-white">
+              <li><a href="#home">Home</a></li> 
+              <li><a href="#about" >About</a></li> 
+              <li><a href="#work">Work</a></li> 
+              <li><a href="#services">Services</a></li> 
+              <li><a href="#contact" >Contact</a></li> 
+              <!-- <li><a href="#resume">Resume</a></li>  -->
+            </ul> 
+
+            <!-- Burger -->
+           <div class="burger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="86" height="26" fill="black" class="bi bi-list" viewBox="0 0 16 16">
+              <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+            </svg>
+           </div>
+
+              <!-- DarkMode -->
+                  <div class="me-4 mb-3 DarkMode-Box" >
+                      <input type="checkbox" class="checkbox" class="form-check-input" onchange="DarkMode()"  id="theme">
+                      <label class="label"  for="theme">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="yellow" id="light" class="bi bi-brightness-high-fill " viewBox="0 0 16 16">
+                        <path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+                          </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="white" class="bi bi-moon-fill"  id="dark" viewBox="0 0 16 16">
+                           <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
+                        </svg>
+                          <div class="ball"></div>
+                      </label>
+                  </div>
+              </nav>
+
+              <!-- Header -->
+              <header class="header"  id="home">
+                
+                <div class="first-Half">
+                  <h3 class="lg-txt text-white">I'm Md <span class="text-danger"> Faizan </span>Ahmad
+                    From <a href="https://goo.gl/maps/bcjrWWnxbcGpwkQG6">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="red" title="ClickME" class="bi bi-geo-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z"/>
+                      </svg>
+                    </a></h3>
+                 
+                    <p>Iam <span class="typed-text ms-3"></span><span class="cursor">&nbsp;</span></p>
+                    <!-- <p class="small-txt">Web Developer</p> -->
+                    <div class="btn-cv-links">
+                        <a href="public/Resum-Md Faizan Ahmad.pdf" class="btn-cv" download="Md-Faizan-Ahmad-CV"> Get Resume </a>
+                        <a href="#about" class="btn-cv"> About Me </a>
+                       </div>
+                    </div>
+                    <!-- <div class="second-Half">
+                      <img src="img/IMG_20220809_201951-.png" alt="">
+                   </div>  -->
+                  
+                </header>
+             
+              
+                <!-- SECTION -->
+               <section class="blur-bg"  id="about">
+                  <h4 class="section-title">ABOUT ME</h4>
+                  <div class="about"> 
+                  <div class="first-section mb-4" id="about">
+                      <div class="intro-line">
+                        <div class="dp">
+                          <img src="img/User-Img.jpg" width="100" height="100" alt="">
+                        </div>
+                        <div class="intro">
+                          <p>
+                            Hi My name is <br> <span class="bg-dark text-white p-1"> Md Faizan Ahmad</span> <br>
+                            I'm a <span> Web
+                             Developer</span>
+                             I have completed Fullstack Web Development From Naresh IT Ameerpet Hyderabad,
+                             I have acquired the skills and knowledge necessary to make your project a success.
+                            </p>
+                        </div>
+                      </div>
+                    </div>
+      
+                    <div class="second-section ">
+                    <div class="tab-titles">
+                      <p class="tab-links active-link" onclick="opentab('front-end')">Front-End</p>
+                      <p class="tab-links" onclick="opentab('back-end')">Back-End</p>
+                      <p class="tab-links" onclick="opentab('education')">Education</p>
+                      <p class="tab-links" onclick="opentab('skills')">Skills</p>
+                    </div>
+                    <div class="tab-contents active-tab" id="front-end">
+                      <div class="skills-bar">
+                        <div class="bar">
+                          <div class="info">
+                            <span>HTML</span>
+                          </div>
+                          <div class="progress-line"><span class="html"></span></div>
+                          <div class="bar">
+                            <div class="info">
+                              <span>CSS</span>
+                            </div>
+                            <div class="progress-line"><span class="css"></span></div>
+                            <div class="bar">
+                              <div class="info">
+                                <span>BOOTSTRAP</span>
+                              </div>
+                              <div class="progress-line"><span class="bootstrap"></span></div>
+                              <div class="bar">
+                                <div class="info">
+                                  <span>JAVASCRIPT</span>
+                                </div>
+                                <div class="progress-line"><span class="javascript"></span></div>              
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>          
+                    <div class="tab-contents" id="back-end">
+                      <div class="skills-bar">
+                        <div class="bar">
+                          <div class="info">
+                            <span>jQuery</span>
+                          </div>
+                          <div class="progress-line"><span class="jq"></span></div>
+                        </div>
+                
+                        <div class="bar">
+                          <div class="info">
+                            <span>Node Js</span>
+                          </div>
+                          <div class="progress-line"><span class="node"></span></div>
+                
+                          <div class="bar">
+                            <div class="info">
+                              <span>Express Js</span>
+                            </div>
+                            <div class="progress-line"><span class="express"></span></div>
+                
+                            <div class="bar">
+                              <div class="info">
+                                <span>MongoDB</span>
+                              </div>
+                              <div class="progress-line"><span class="mongodb"></span></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tab-contents" id="education">
+                      <ul>
+                        <li><span>2022 - Current</span><br>Learning React JS From Naresh IT Hyderabad</li>
+                        <li><span>2022 </span><br>Completed UI Full-Stack Web Development From Naresh IT Hyderabad</li>
+                        <li><span>2017-2020 </span><br>Graduation In Bachelor of Arts (Psychology) From S.sinha College Aurangabad Bihar
+                        </li>
+                        <li><span>2015-2017 </span><br>Intermediate Form BSEB Patna</li>
+                        <li><span>2015 </span><br>SCC Form BSEB Patna</li>
+                      </ul>
+                    </div>
+                    <div class="tab-contents" id="skills">
+                      <ul class="Skill">
+                        <li>Computer skills</li>
+                        <li>Problem solving</li>
+                        <li>Trustworthy</li>
+                        <li>Time management</li>
+                        <li>Multitasking</li>
+                        <li>Teamwork and collaboration</li>
+                        <li>Creative</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+            <hr>
+            <!------------------------------------------------------------------------------------ -->
+            
+            <div class="SW-Title">
+              <h4 id="services">Service</h4>
+              <h4 id="work">WORK</h4>
+            </div>
+              <div class="SW-Tab"> 
+                <div class="service-list" id="service">
+                  <div class="card">
+                    <div class="card-header p-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-laptop"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M13.5 3a.5.5 0 0 1 .5.5V11H2V3.5a.5.5 0 0 1 .5-.5h11zm-11-1A1.5 1.5 0 0 0 1 3.5V12h14V3.5A1.5 1.5 0 0 0 13.5 2h-11zM0 12.5h16a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 12.5z" />
+                      </svg>
+                      <div class="pt-1">
+                        Landing Page
+                      </div>
+                    </div>
+                    <div class="card-text  p-1">
+                      <p>
+                        I can Develop fast,SEO-friendly and Professional Web Design/Development with Responsive Layout for all
+                        devices,
+                        I can Fix bugs
+        
+                      </p>
+                    </div>
+                  </div>
+        
+                  <div class="card">
+                    <div class="card-header p-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-shop"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M2.97 1.35A1 1 0 0 1 3.73 1h8.54a1 1 0 0 1 .76.35l2.609 3.044A1.5 1.5 0 0 1 16 5.37v.255a2.375 2.375 0 0 1-4.25 1.458A2.371 2.371 0 0 1 9.875 8 2.37 2.37 0 0 1 8 7.083 2.37 2.37 0 0 1 6.125 8a2.37 2.37 0 0 1-1.875-.917A2.375 2.375 0 0 1 0 5.625V5.37a1.5 1.5 0 0 1 .361-.976l2.61-3.045zm1.78 4.275a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0 1.375 1.375 0 1 0 2.75 0V5.37a.5.5 0 0 0-.12-.325L12.27 2H3.73L1.12 5.045A.5.5 0 0 0 1 5.37v.255a1.375 1.375 0 0 0 2.75 0 .5.5 0 0 1 1 0zM1.5 8.5A.5.5 0 0 1 2 9v6h1v-5a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v5h6V9a.5.5 0 0 1 1 0v6h.5a.5.5 0 0 1 0 1H.5a.5.5 0 0 1 0-1H1V9a.5.5 0 0 1 .5-.5zM4 15h3v-5H4v5zm5-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1v-3zm3 0h-2v3h2v-3z" />
+                      </svg>
+                      <div class="pt-1">
+                        E-commerce
+                      </div>
+                    </div>
+                    <div class="card-text ms-1 p-1">
+                      <p>
+                        I Can Design Professional E-Commerce Responsive Website For All Devices ,User experience will be easy
+                        and smooth
+        
+                      </p>
+                    </div>
+                  </div>
+
+                  <div class="card">
+                    <div class="card-header p-2">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-tools"
+                        viewBox="0 0 16 16">
+                        <path
+                          d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3c0-.269-.035-.53-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814L1 0Zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708ZM3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026L3 11Z" />
+                      </svg>
+                      <div class="pt-1">
+                        Back-End
+                      </div>
+                    </div>
+                    <div class="card-text ms-1 p-1">
+                      <p>
+                        I Can Create Database in Back-End By MongoDB, and Connect to Server Though Express.js
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              <!-- ------------------------------------------------------------------------------------ -->
+            
+                 <div class="work-list" id="mywork">
+                 
+                  <div class="Card">
+                    <div class="back">
+                        <p>Hotel Room Booking with Js, Interactive and Responsive Design</p>
+                        <a href="https://iamfaizandev.github.io/Hotel-Room-Booking/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                              </svg>
+        
+                        </a>
+                    </div>
+                    <div class="front">
+                        <div class="image">
+                        <img src="img/Hotel-Room-Booking.jpg">
+                        <h2>Room Booking</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="Card">
+                  <div class="back">
+                      <p>Inox Movies Ticket Booking with using Js,jQuery</p>
+                      <a href="https://iamfaizandev.github.io/Hotel-Room-Booking/">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                              <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                            </svg>
+      
+                      </a>
+                  </div>
+                  <div class="front">
+                      <div class="image">
+                      <img src="img/Inox-Favicon.png">
+                      <h2>Inox-Movies</h2>
+                      </div>
+                  </div>
+              </div>
+              <div class="Card">
+                <div class="back">
+                    <p>Hotel Templates  , Responsive into Procerss</p>
+                    <a href="https://iamfaizandev.github.io/Hotel-Room-Booking/">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="26" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                          </svg>
+    
+                    </a>
+                </div>
+                <div class="front">
+                    <div class="image">
+                    <img src="img/Hotel-Gif.gif">
+                    <h2>Hotel Templates</h2>
+                    </div>
+                </div>
+            </div>
+                                                 
+
+
+
+
+
+
+
+
+
+
+
+
+
+                <!-- <div class="Card" >
+                    <div class="back">
+                        <p>Hotel Room Booking with Js, Interactive and Responsive Design</p>
+                        <a href="https://iamfaizandev.github.io/Hotel-Room-Booking/">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-arrow-right-square" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm4.5 5.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z"/>
+                              </svg>
+        
+                        </a>
+                    </div>
+                    <div class="front">
+                        <div class="image">
+                        <img src="img/Hotel-Room-Booking.jpg">
+                        <h2>Room Booking</h2>
+                        </div>
+                    </div>
+                </div> -->
+                    <!-- <div class="work">
+                      <img src="img/Hotel-Room-Booking.jpg" alt="">
+                      <div class="layer">
+                        <h3>Hotel Room</h3>
+                        <p>Hotel Room Booking With JS  </p>
+                        <a href="https://iamfaizandev.github.io/Hotel-Room-Booking/"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                          </svg></a>
+                      </div>
+                    </div> -->
+                    <!-- <div class="work">
+                      <img src="img/Bmi-Screen-Shot.png" alt="">
+                      <div class="layer">
+                        <h3>BMI</h3>
+                        <p>Body Mass Index </p>
+                        <a href="https://iamfaizandev.github.io/Bmi-Calculator/"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                          </svg></a>
+                      </div>
+                    </div> -->
+                    <!-- <div class="work">
+                      <img src="img/Inox-Favicon.png" alt="">
+                      <div class="layer">
+                        <h3>INOX</h3>
+                        <p>INOX Ticket Booking with Js,Css,
+                          Movie Poster Show,Responsive,And 
+                        </p>
+                        <a href="https://iamfaizandev.github.io/Inox-Movies/"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor"
+                            class="bi bi-box-arrow-up-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                              d="M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5z" />
+                            <path fill-rule="evenodd"
+                              d="M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0v-5z" />
+                          </svg></a>
+                      </div>
+                    </div> -->
+                  </div>  
+              </div>   
+     </section> 
+
+
+
+
+
+
+
+
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        
+        function opentab(tabname) {
+        for (tablink of tablinks) {
+        tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+  </script>
+
+
+
+
+
+             
+  <script src="src/spinner.js"></script>
+  
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js">
+    <title>Shop Page</title>
+    <script>
+
+        $(function(){
+        if($.cookie("userid")==undefined) {
+        location.href="Login.html";
+    } else {
+        $("#user").html($.cookie("userid"));
+    }
+    $("#btnSignout").click(function(){
+        $.removeCookie("userid");
+        location.href="Login.html";
+    })
+})
+    </script>
+</head>
+<body>
+    
+    <h2>Welcome to Fzn Shop</h2>
+        <button id="btnSignout">Signout</button>
+</body>
+</html>
+
+
+
+

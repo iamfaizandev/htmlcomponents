@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  <title>Register Page</title>
+  <script>
+      $(function(){
+  $("#btnRegister").click(function(){
+      var user = {
+          "UserId": $("#UserId").val(),
+          "UserName": $("#UserName").val(),
+          "Password": $("#Password").val(),
+          "Age": parseInt($("#Age").val()),
+          "Email": $("#Email").val(),
+          "Mobile": $("#Mobile").val()
+      };
+      $.ajax({
+          method: "POST",
+          url: "http://localhost:1000/registeruser",
+          data: user
+      });
+      alert("Registered Successfully..");
+      location.href="Login.html";
+  })
+
+  $("#UserId").keyup(function(){
+      var userid = $("#UserId").val();
+      $.ajax({
+          method: "GET",
+          url: "http://localhost:1000/getusers",
+          success: function(data){
+              for(var user of data) {
+                  if(user.UserId==userid) {
+                      $("#UserMsg").html("User Id Taken - Try Another").css({'color':'red'});
+                      break;
+                  } else {
+                      $("#UserMsg").html("User ID Available").css({'color':'green'});
+                  }
+              }
+          }
+      })
+  })
+})
+  </script>
+  <style>
+   body{
+  background-image: url(./assests/bg.jpg);
+  background-size: cover;
+}
+.main{
+width: 302px;
+height: 640px;
+box-shadow: 1px 1px 6px #a92727;
+border-radius: 6px;
+background-color: rgb(253 249 249);
+}
+  </style>
+</head>
+<body class="container-fluid">
+  <div class="d-flex justify-content-center align-items-center" style="height:740px">
+    <div class="main">
+     <h4 style="font-size: 20px;text-align: center; padding: 10px;font-family: Arial, Helvetica, sans-serif; margin-bottom: 0px;">Create New Account</h4>
+     <form class="form-group p-4">
+        <div>
+          <label for="userid" class="form-check-label">User Id:</label>
+          <input type="text" class="form-control-sm" id="UserId" >
+          <p id="UserMsg"></p>
+        </div>
+          
+        <div>
+          <label for="username" class="form-check-label">User Name:</label>
+          <input type="text" class="form-control-sm" id="UserName">
+        </div>
+  
+          <div>
+            <label for="Email" class="form-check-label">Email</label>
+            <input type="email" class="form-control-sm" id="Email" placeholder="email@example.com">
+          </div>
+      
+         <div>
+            <label for="Password" class="form-check-label">Password:</label>
+            <input type="password" class="form-control-sm" autocomplete="off" id="Password" placeholder="Password">
+          </div>
+          
+          <div>
+            <label for="Age">Age</label>
+            <input type="text" class="form-control-sm" id="Age">
+          </div>
+  
+  
+        <div>
+          <label class="form-check-label" for="Mobile">Mobile</label>
+          <input type="number" class="form-control-sm" id="Mobile">
+        </div>
+       
+      </form>
+      <button class="btn btn-primary mt-3" id="btnRegister" style="margin-left: 70px;">Register</button>
+  
+    </div>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+.Card{
+    width: 16%;
+    height: 14rem;
+    margin: 10px; 
+   
+}
+
+img{
+    width: 85%;
+    height: 14rem;
+    border-radius: 10px; 
+}
+
+.back p{
+    position: absolute;
+    font-size: 22px;
+    top: 20%;
+    text-align: center;
+   
+}
+
+.back a
+{
+    text-decoration: none;
+    left: 45%;
+    position: absolute;
+    bottom: 30%;
+    font-size: 19px;
+}
+
+.back svg:hover
+{ 
+  background-color: red;  
+  color: white;
+  transform: scale(1.2);
+  transition: 1s;
+}
+
+.front h2
+{
+    text-shadow: 1px 1px 6px rgb(255, 255, 255);
+    position: absolute;
+    padding: 10px;
+    bottom:20% ;
+    color: #fff;
+    font-size: 22px;
+    mix-blend-mode:overlays;
+}
+
+
+.Card > .front{
+    position: absolute;
+    transform: perspective(600px) rotateY(0deg);
+    width: 302px;
+    height: 290px;
+    backface-visibility: hidden; 
+    transition: transform .5s linear 0s;
+}
+
+
+.Card > .back
+{
+    position: absolute;
+    transform: perspective(600px) rotateY(180deg);
+    background-image: url(./Hotel-Back.jpg);
+    color: #fff;
+    width: 16%;
+    height: 14rem;
+    border-radius: 10px;
+    padding: 5px;
+    backface-visibility: hidden; 
+    transition: transform .5s linear 0s;
+}
+
+.Card:hover > .front
+{
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.Card:hover > .back
+{
+    transform: perspective(600px) rotateY(0deg);
+}
